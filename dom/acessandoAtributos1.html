@@ -15,7 +15,33 @@
         <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
     </div>
     <script>
-        // ...
+        function log(...args) {
+            console.log(...args);
+        } /* função criada apenas para teste com parâmetro rest */
+
+        const img = document.querySelector('img');
+        log(img);
+        log('getAttribute', img.getAttribute('src'));
+        log('src', img.src);
+        log('["src"]', img['src']);
+        log('alt', img.alt);
+
+        log('Elemento "img"......................');
+        log('NodeType', img.nodeType);
+        log('NodeName', img.nodeName);
+        
+        const src = img.getAttributeNode('src');
+        log('Atributo "src"...........................');
+        log('NodeType', src.nodeType);
+        log('NodeName', src.nodeName);
+        log('NodeValue', src.nodeValue);
+
+        const link = document.querySelector('a');
+        log('Elemento "a"................................');
+        log('href', link.href);
+        log('firstChild.nodeType', link.firstChild.nodeType);
+        link.firstChild.nodeValue = 'Novo Texto';
+        link.innerHTML = 'Novo Texto2';
     </script>
 </body>
 
